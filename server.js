@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
@@ -8,6 +9,9 @@ var corsOptions = {
 };
 
 const db = require("./models");
+
+console.log("this is db URL: >>>", db.url);
+
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -37,7 +41,7 @@ app.get("/", (req, res) => {
 require("./routes/machine.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.NODE_DOCKER_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
