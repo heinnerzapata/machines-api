@@ -1,0 +1,16 @@
+{
+  "name": "machines-api",
+  "version": "1.0.0",
+  "description": "machines api service nodejs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "Heinner Zapata",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.3"
+  }
+}
